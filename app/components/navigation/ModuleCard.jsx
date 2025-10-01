@@ -17,8 +17,8 @@ export default function ModuleCard({ module }) {
                 <div className="card-body">
                     <h5 className="card-title">{module.title}</h5>
                     <div className="card-text mt-2">
-                        <span className="badge bg-info">Credits: {module.credits}</span>
-                        <span className="badge bg-info mb-2">Hours: {module.hours}</span>
+                        <span className="badge bg-info mx-2">Credits: {module.credits}</span>
+                        <span className="badge bg-info mb-2 mx-2">Hours: {module.hours}</span>
                         <p className="text-muted mb-1">
                             Renamed in new syllabus:{" "}
                             <span className="badge rounded-pill bg-success">

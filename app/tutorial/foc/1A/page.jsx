@@ -237,7 +237,7 @@ export default function Foc_Tut1() {
                 <h4>The Motherboard</h4>
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped align-middle">
-                        <thead className="table-dark">
+                        <thead className="table-dark fw-bold">
                             <tr>
                                 <th scope="col">Component</th>
                                 <th scope="col">Description</th>
@@ -418,7 +418,7 @@ export default function Foc_Tut1() {
                 <h4>HDD vs SSD</h4>
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped align-middle">
-                        <thead className="table-dark">
+                        <thead className="table-dark fw-bold">
                             <tr>
                                 <th className="w-10"></th>
                                 <th>Hard Disk Drive (HDD)</th>
