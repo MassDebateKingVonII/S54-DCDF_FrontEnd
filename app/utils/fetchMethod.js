@@ -15,7 +15,7 @@ export async function fetchMethod(
     // - Server: use absolute backend URL from env
     // - Client: use relative path (Next.js rewrite proxy)
     const baseUrl = isServer
-        ? process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"
+        ? process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_DEV_API_URL
         : "";
 
     // Ensure proper URL

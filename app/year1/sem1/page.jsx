@@ -1,64 +1,40 @@
-'use client';
-
-import { Suspense, useState } from 'react';
+// app/year1/sem1/page.jsx
 import ModuleList from '@components/navigation/ModuleList.jsx';
 import { fetchMethod } from '@utils/fetchMethod.js';
 
-function ModulesListWrapper() {
-    const [modulesResource] = useState(() => {
-        let status = 'pending';
-        let result;
-        const promise = fetchMethod('/api/modules?year_sem=year1_sem1')
-            .then(res => {
-                if (res.status >= 200 && res.status < 300) {
-                    status = 'success';
-                    result = res.data;
-                } else {
-                    status = 'error';
-                    result = new Error('❌ Failed to load modules');
-                }
-            })
-            .catch(err => {
-                status = 'error';
-                result = new Error('❌ Failed to load modules');
-            });
+export default async function Year1Sem1Page() {
+    let modules = [];
 
-        return {
-            read() {
-                if (status === 'pending') throw promise;
-                if (status === 'error') throw result;
-                if (status === 'success') return result;
-            }
-        };
-    });
+    try {
+        const res = await fetchMethod('/api/modules?year_sem=year1_sem1');
+        if (res.status >= 200 && res.status < 300) {
+            modules = res.data;
+        } else {
+            console.error('Failed to fetch modules:', res);
+        }
+    } catch (err) {
+        console.error('Error fetching modules:', err);
+    }
 
-    const modules = modulesResource.read();
-    return <ModuleList modules={modules} />;
-}
-
-function ModulesSkeleton({ count = 5 }) {
-    return (
-        <div className="row g-3">
-            {Array.from({ length: count }).map((_, i) => (
-                <div key={i} className="col-lg-4 col-md-6 col-sm-12">
-                    <div className="card skeleton-card">
-                        <div className="card-body">
-                            <div className="bg-secondary rounded mb-2" style={{ height: '20px', width: '60%' }} />
-                            <div className="bg-secondary rounded" style={{ height: '100px', width: '100%' }} />
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    );
-}
-
-export default function Year1Sem1Page() {
     return (
         <div className="container-lg mt-5 mb-3">
-            <Suspense fallback={<ModulesSkeleton />}>
-                <ModulesListWrapper />
-            </Suspense>
+            <div className="row g-3">
+                {modules.length > 0 ? (
+                    <ModuleList modules={modules} />
+                ) : (
+                    // Server-side skeleton/fallback
+                    Array.from({ length: 5 }).map((_, i) => (
+                        <div key={i} className="col-lg-4 col-md-6 col-sm-12">
+                            <div className="card skeleton-card">
+                                <div className="card-body">
+                                    <div className="bg-secondary rounded mb-2" style={{ height: '20px', width: '60%' }} />
+                                    <div className="bg-secondary rounded" style={{ height: '100px', width: '100%' }} />
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                )}
+            </div>
         </div>
     );
 }
