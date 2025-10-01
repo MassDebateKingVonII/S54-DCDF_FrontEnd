@@ -1,0 +1,10 @@
+{
+    "title": "Settings",
+    "banner": "/assets/images/settings/banner.jpg",
+    "offcanvasId": "offcanvasMobileNav",
+    "tutorialPrefix": "/settings/profile",
+    "menu": [
+        { "type": "link", "label": "Profile", "href": "/settings/profile" },
+        { "type": "link", "label": "Appearance", "href": "/settings/appearance" }
+    ]
+}

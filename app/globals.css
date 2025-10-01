@@ -1,0 +1,44 @@
+/* All the basic required styling */
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+.theme-card.active {
+	border: 3px solid #0d6efd;
+}
+
+.page-content {
+	flex: 1 0 auto;
+	/* grow and shrink as needed */
+}
+
+section {
+	margin-top: 5vh;
+}
+
+body {
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* For Dark Mode */
+body.bs-dark-theme {
+	background-color: #212529 !important;
+	/* Bootstrap dark background */
+}
+
+footer {
+	margin-top: auto;
+	/* push footer to bottom if content is short */
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}

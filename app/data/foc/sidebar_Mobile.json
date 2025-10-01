@@ -1,0 +1,32 @@
+{
+    "title": "ST2413 - FOC",
+    "banner": "/assets/images/foc/banner.jpg",
+    "offcanvasId": "offcanvasMobileNav",
+    "tutorialPrefix": "/tutorial/foc",
+    "menu": [
+        { "type": "link", "label": "Introduction", "href": "/tutorial/foc" },
+        {
+            "type": "dropdown",
+            "label": "Tutorial",
+            "id": "mobileTutorialDropdown",
+            "items": [
+                { "label": "1A - Basic Structures Of Computers", "href": "/tutorial/foc/1A" },
+                { "label": "1B - Fetch, Execution and IO", "href": "/tutorial/foc/1B" },
+                { "label": "2 - Digital Representation", "href": "/tutorial/foc/2" },
+                { "label": "3 - Introduction to Computer Networks", "href": "/tutorial/foc/3" },
+                { "label": "4 - Network Devices", "href": "/tutorial/foc/4" },
+                { "label": "5 - TCP/IP", "href": "/tutorial/foc/5" },
+                { "label": "6A - Ubuntu Linux Installation", "href": "/tutorial/foc/6A" },
+                { "label": "6B - Ubuntu Linux Quick Tour", "href": "/tutorial/foc/6B" },
+                { "label": "7 - FileSystem Basics", "href": "/tutorial/foc/7" },
+                { "label": "8 - Network Application Configuration", "href": "/tutorial/foc/8" },
+                { "label": "9A - Users and Groups User and Group Administration Process", "href": "/tutorial/foc/9A" },
+                { "label": "9B - HTTP", "href": "/tutorial/foc/9B" },
+                { "label": "10 - Introduction to Cloud Computing", "href": "/tutorial/foc/9B" }
+            ]
+        },
+        { "type": "link", "label": "Mock Papers", "href": "/tutorial/foc/papers" },
+        { "type": "link", "label": "Projects", "href": "/tutorial/foc/projects" },
+        { "type": "link", "label": "References & Additional Resources", "href": "/tutorial/foc/references" }
+    ]
+}
