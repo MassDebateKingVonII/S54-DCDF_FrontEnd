@@ -1,6 +1,5 @@
 // app/layout.jsx
 
-import Head from "next/head";
 import Script from "next/script";
 
 // Import Bootstrap CSS
@@ -9,11 +8,13 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 // Import Bootstrap JS
 import BootstrapLoader from "@components/BootstrapLoader.jsx";
-
 import Navbar from "@components/Navbar.jsx";
 import Footer from "@components/Footer.jsx";
 
 import './globals.css';
+
+// Import Theme
+import { ThemeProvider } from "@components/ThemeProvider.jsx";
 
 export const metadata = {
 	title: 'S54 - DCDF',
@@ -21,37 +22,29 @@ export const metadata = {
 	icons: {
 		icon: '/favicon.ico',
 	},
+	charset: 'UTF-8'
 };
+
+// Export viewport separately
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 
 export default function RootLayout({ children }) {
 	
 	return (
 		<html lang="en">
-			<>
-			<Head>
-				<title>FOP - Tutorial</title>
-				<meta name="description" content="Fundamentals of Programming Tutorial" />
-			</Head>
-			<head>
-				<meta charSet="UTF-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-				{/* Your static CSS from public folder */}
-				<link rel="stylesheet" href="/assets/css/utils/prism.css" />
-				<link rel="stylesheet" href="/assets/css/utils/icons.css" />
-				<link rel="stylesheet" href="/assets/css/utils/top_navbar.css" />
-				<link rel="stylesheet" href="/assets/css/utils/document_preview.css" />
-				<link rel="stylesheet" href="/assets/css/utils/left_navigation.css" />
-				<link rel="stylesheet" href="/assets/css/utils/code_preview.css" />
-				<link rel="stylesheet" href="/assets/css/utils/widths.css" />
-				<link rel="stylesheet" href="/assets/css/utils/letter_list.css" />
-				<link rel="stylesheet" href="/assets/css/index/homepage.css" />
-			</head>
 			<body>
 				<BootstrapLoader>
-          			<Navbar />
-					<main className="page-content">{children}</main>
-					<Footer />
+					<ThemeProvider>
+						<Navbar />
+						<main className="page-content">
+							{children}
+						</main>
+						<Footer />
+					</ThemeProvider>
 				</BootstrapLoader>
 
 				{/* JS scripts */}
@@ -60,7 +53,6 @@ export default function RootLayout({ children }) {
 				{/* <Script src="/assets/js/settings/theme.js" strategy="afterInteractive" /> */}
 				{/* <Script src="/assets/js/settings/fontSize.js" strategy="afterInteractive" />*/}
 			</body>
-			</>
 		</html>
 	);
 }

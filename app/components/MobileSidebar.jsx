@@ -21,13 +21,12 @@ export default function MobileSidebar({ data }) {
 
     const isActive = (href, type = "link") => {
         if (type === "link") {
-            // Exact match for normal links
             return href === currentPath;
         } else if (type === "dropdown") {
-            // Highlight dropdown only if currentPath starts with tutorialPrefix and has a number after it
-            const prefix = tutorialPrefix.replace(/\/$/, ""); // remove trailing slash
-            const regex = new RegExp(`^${prefix}/\\d+$`);
-            return regex.test(currentPath);
+            // active if any subitem matches
+            return menu
+                .find((item) => item.type === "dropdown" && item.href === href)
+                ?.items.some((sub) => sub.href === currentPath);
         }
         return false;
     };
@@ -51,8 +50,8 @@ export default function MobileSidebar({ data }) {
             data-bs-target={`#${offcanvasId}`}
             aria-controls={offcanvasId}
         >
-            <i className="bi bi-folder-plus" style={{ fontSize: "1.5rem" }}></i>
-            Sidebar
+            <i className="bi bi-layout-sidebar"></i>
+            Content
         </button>
 
 

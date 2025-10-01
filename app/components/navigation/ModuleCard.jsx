@@ -5,12 +5,12 @@ import Link from "next/link";
 
 export default function ModuleCard({ module }) {
     return (
-        <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div className="col-lg-4 col-md-6 col-sm-12 mb-3">
             <div className="card h-100">
                 <Image
                     src={module.img}
                     alt={module.alt}
-                    className="card-img-top"
+                    className="card-img-top img-fluid"
                     width={400}
                     height={250}
                 />

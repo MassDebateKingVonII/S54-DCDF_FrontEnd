@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Head from "next/head";
 import Sidebar from "@components/Sidebar.jsx";
 import MobileSidebar from "@components/MobileSidebar.jsx";
@@ -6,14 +7,14 @@ import MobileSidebar from "@components/MobileSidebar.jsx";
 import Settings_sidebar from "@data/settings/sidebar.json";
 import Settings_sidebar_Mobile from "@data/settings/sidebar_Mobile.json";
 
-export default function FopTutLayout({ children }) {
+export default function SettingsLayout({ children }) {
     return (
         <>
             <Head>
                 <title>Settings</title>
                 <meta name="description" content="Fundamentals of Programming Tutorial" />
+                <link rel="stylesheet" href="/assets/css/settings/main.css"/>
             </Head>
-
             {/* Mobile Sidebar */}
             <MobileSidebar data={Settings_sidebar_Mobile} />
 

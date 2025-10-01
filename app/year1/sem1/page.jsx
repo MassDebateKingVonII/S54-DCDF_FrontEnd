@@ -18,7 +18,7 @@ export default async function Year1Sem1Page() {
 
     return (
         <div className="container-lg mt-5 mb-3">
-            <div className="row g-3">
+            <div className="row">
                 {modules.length > 0 ? (
                     <ModuleList modules={modules} />
                 ) : (
