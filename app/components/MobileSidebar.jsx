@@ -4,24 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function MobileSidebar({ data }) {
-    const { title, banner, menu, offcanvasId = "mobileSidebar", tutorialPrefix = "" } = data;
+    const { title, banner, menu, offcanvasId = "mobileSidebar" } = data;
 
     const [isMobile, setIsMobile] = useState(false);
-    const [showButton, setShowButton] = useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const [buttonVisible, setButtonVisible] = useState(true); // main button visible
+    const [peekVisible, setPeekVisible] = useState(false); // arrow peek visible
 
     const currentPath = usePathname();
-
-    const isActive = (href, type = "link") => {
-        if (type === "link") {
-            return href === currentPath;
-        } else if (type === "dropdown") {
-            return menu
-                .find((item) => item.type === "dropdown" && item.href === href)
-                ?.items.some((sub) => sub.href === currentPath);
-        }
-        return false;
-    };
 
     // Detect mobile
     useEffect(() => {
@@ -33,55 +22,81 @@ export default function MobileSidebar({ data }) {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Show button only when scrolled past 50vh and scrolling up
+    // Initially show button then hide to right after 3s
     useEffect(() => {
         if (!isMobile) return;
+        const timer = setTimeout(() => {
+            setButtonVisible(false);
+            setPeekVisible(true);
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, [isMobile]);
 
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            const triggerY = window.innerHeight * 0.5;
+    // Handle arrow click to show main button again
+    const handlePeekClick = () => {
+        setButtonVisible(true);
+        setPeekVisible(false);
 
-            if (currentScrollY > triggerY && currentScrollY < lastScrollY) {
-                setShowButton(true);
-            } else {
-                setShowButton(false);
-            }
-
-            setLastScrollY(currentScrollY);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY, isMobile]);
+        setTimeout(() => {
+            setButtonVisible(false);
+            setPeekVisible(true);
+        }, 3000);
+    };
 
     if (!isMobile) return null;
 
     return (
         <>
-            {showButton && (
+            {/* Main sidebar button */}
+            <button
+                type="button"
+                className="btn btn-primary d-lg-none shadow-lg floating-btn"
+                style={{
+                    fontSize: "1.2rem",
+                    padding: "0.6rem 1rem",
+                    borderRadius: "0.5rem",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    position: "fixed",
+                    bottom: "20px",
+                    right: buttonVisible ? "10px" : "-100px", // hide offscreen
+                    zIndex: 3200,
+                    transition: "right 0.4s ease",
+                }}
+                data-bs-toggle="offcanvas"
+                data-bs-target={`#${offcanvasId}`}
+                aria-controls={offcanvasId}
+            >
+                <i className="bi bi-layout-sidebar"></i>
+            </button>
+
+            {/* Peek arrow */}
+            {peekVisible && (
                 <button
                     type="button"
-                    className="btn btn-primary d-lg-none ms-2 fw-bold shadow-lg mt-3"
+                    className="btn btn-secondary d-lg-none shadow-lg peek-arrow"
+                    onClick={handlePeekClick}
                     style={{
-                        fontSize: "1.2rem",
-                        padding: "0.6rem 1rem",
-                        borderRadius: "0.5rem",
+                        position: "fixed",
+                        bottom: "20px",
+                        right: "-3px",
+                        zIndex: 3200,
+                        borderRadius: "0 0.5rem 0.5rem 0",
+                        padding: "0.8rem 0.2rem",
+                        fontSize: "0.8rem",
                         display: "flex",
                         alignItems: "center",
-                        gap: "0.5rem",
-                        position: "fixed",
-                        bottom: "20px", // float at bottom
-                        right: "20px",
-                        zIndex: 3200,
+                        justifyContent: "center",
+                        transition: "opacity 0.3s ease, right 0.4s ease",
+                        opacity: 0.2, // initial transparency
                     }}
-                    data-bs-toggle="offcanvas"
-                    data-bs-target={`#${offcanvasId}`}
-                    aria-controls={offcanvasId}
                 >
-                    <i className="bi bi-layout-sidebar"></i>
+                    <i className="bi bi-arrow-left"></i>
                 </button>
             )}
 
+            {/* Offcanvas sidebar */}
             <div
                 className="sidebar-offcanvas offcanvas offcanvas-start"
                 tabIndex="-1"
@@ -108,7 +123,7 @@ export default function MobileSidebar({ data }) {
                                 return (
                                     <Link
                                         key={i}
-                                        className={`nav-link w-100 ${isActive(item.href, "link") ? "active" : ""}`}
+                                        className={`nav-link w-100 ${item.href === currentPath ? "active" : ""}`}
                                         href={item.href}
                                     >
                                         {item.label}
@@ -119,7 +134,7 @@ export default function MobileSidebar({ data }) {
                                     <div key={i} className="nav-item w-100 dropdown">
                                         <a
                                             className={`nav-link dropdown-toggle w-100 text-start ${
-                                                isActive(item.href, "dropdown") ? "active" : ""
+                                                item.items.some((sub) => sub.href === currentPath) ? "active" : ""
                                             }`}
                                             href="#"
                                             id={item.id}

@@ -38,3 +38,8 @@
     word-break: break-word;
     /* fallback */
 }
+
+.peek-arrow:hover,
+.peek-arrow:active {
+    opacity: 1;
+}
