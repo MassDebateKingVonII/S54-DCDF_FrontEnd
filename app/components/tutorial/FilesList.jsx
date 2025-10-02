@@ -44,7 +44,7 @@ export default function PapersList({ files }) {
                         <div className="bg-white border rounded p-2 me-3">
                             {getFileIcon(file.name)}
                         </div>
-                        <span>{file.name}</span>
+                        <span className="d-block text-break">{file.name}</span>
                     </div>
                     <div className="d-flex align-items-center">
                         <a

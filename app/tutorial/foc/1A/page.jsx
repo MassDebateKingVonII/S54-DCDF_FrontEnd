@@ -113,7 +113,7 @@ export default function Foc_Tut1A() {
                             </div>
                         </div>
                     </li>
-                    <li className="list-group-item">
+                    <li className="list-group-itfem">
                         <p>Storage devices such as hard disks and CDs/DVDs</p>
                         <div className="row g-3">
                             <div className="col-6 col-md-3 col-sm-3">
@@ -139,7 +139,7 @@ export default function Foc_Tut1A() {
                         alt="Input Ports"
                         width={1100}
                         height={400}
-                        className="figure-img img-fluid rounded" />
+                        className="img-fluid" />
                     <figcaption className="figure-caption text-center">
                         <h5 className="my-0">Overview Of Computer Input Ports</h5>
                         <p>Source:
@@ -151,6 +151,18 @@ export default function Foc_Tut1A() {
 
             <section>
                 <h4>Central Processing Unit (CPU)</h4>
+                <div className="mt-3 d-flex justify-content-center align-items-middle">
+                    <figure>
+                        <Image src="/assets/images/foc/tutorial/1A/CPU.webp"
+                            alt="Input Ports"
+                            width={312}
+                            height={312}
+                            className="img-fluid" />
+                        <figcaption className="text-muted text-center">
+                            An Intel CPU
+                        </figcaption>
+                    </figure>
+                </div>
                 <p>
                     The <strong>CPU</strong> is a computer’s main processing component.
                     It is responsible for executing instructions from both computer programs, such as word processors,
@@ -609,21 +621,41 @@ export default function Foc_Tut1A() {
                 </p>
                 <ul>
                     <li>
-                        It contains MAC address(Media Access Control Address)
-                        which is a Unique identifier assigned to NIC
+                        <p>
+                            It contains MAC address(Media Access Control Address)
+                            which is a Unique identifier assigned to NIC
+                        </p>
+                        <Image
+                        height={150}
+                        width={400}
+                        alt="SSID Example"
+                        src="/assets/images/foc/tutorial/1A/MAC_Address.jpg"
+                        className="img-fluid"/>
+                        
                     </li>
                 </ul>
 
-                <h5 className="text-decoration-underline">Wireless NICs</h5>
-                <p>
-                    Wireless NICs must be chosen according to type 
-                    of wireless AP being used.
-                </p>
-                <ul>
-                    <li>Some of the Wi-Fi standards are Wireless-n, 802.11ac or 802.11 a/b/g/n</li>
-                    <li>Wireless NICs connect to network using service set identifier (SSID)</li>
-                    <li>SSID is the network name (e.g. SP Wifi Network)</li>
-                </ul>
+                <div className="px-3">
+                    <h5 className="text-decoration-underline">Wireless NICs</h5>
+                    <p>
+                        Wireless NICs must be chosen according to type
+                        of wireless AP being used.
+                    </p>
+                    <ul>
+                        <li>Some of the Wi-Fi standards are Wireless-n, 802.11ac or 802.11 a/b/g/n</li>
+                        <li>Wireless NICs connect to network using service set identifier (SSID)</li>
+                        <li>
+                            <p>SSID is the network name, e.g.</p>
+                            <Image
+                            height={200}
+                            width={600}
+                            alt="SSID Example"
+                            src="/assets/images/foc/tutorial/1A/SSID.webp"
+                            className="img-fluid"/>
+                        </li>
+                    </ul>
+                </div>
+
             </section>
 
             <section>

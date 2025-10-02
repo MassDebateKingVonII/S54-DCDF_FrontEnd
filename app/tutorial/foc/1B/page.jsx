@@ -74,6 +74,7 @@ export default function Foc_Tut1B() {
                 <Image
                 height={362}
                 width={960}
+                alt="Illustration of how information is processed"
                 src="/assets/images/foc/tutorial/1B/Illustration_Info_Processing.png"
                 className="img-fluid"
                 />
@@ -214,30 +215,213 @@ export default function Foc_Tut1B() {
 
             <section>
                 <h4>Operations Of A Computer</h4>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item">
+                        Computer accepts information in the form of programs and data
+                        through an input unit and stores it in the memory
+                    </li>
+                    <li class="list-group-item">
+                        Information stored in the memory is fetched under program control
+                        into an ALU, where it is processed
+                    </li>
+                    <li class="list-group-item">
+                        Processed information leaves the computer through an output unit
+                    </li>
+                    <li class="list-group-item">
+                        All activities in the computer are directed by the Control Unit
+                    </li>
+                </ol>
             </section>
 
             <section>
                 <h4>Instruction Cycle</h4>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item">
+                        Fetch an instruction and increment the program counter
+                    </li>
+                    <li class="list-group-item">
+                        Decode the instruction and read registers
+                    </li>
+                    <li class="list-group-item">
+                        Perform an ALU operation
+                    </li>
+                    <li class="list-group-item">
+                        Read or write memory data if the instruction involves a memory operand
+                    </li>
+                    <li class="list-group-item">
+                        Write the result into the destination register, if needed
+                    </li>
+                </ol>
             </section>
 
             <section>
                 <h4>Instruction</h4>
+                <ul>
+                    <li>
+                       An instruction specifies an operation and the locations of its data operands 
+                    </li>
+                    <li>
+                        A 32-bit word typically holds one encoded instruction
+                    </li>
+                </ul>
             </section>
 
             <section>
                 <h4>Program</h4>
+                <ul>
+                    <li>
+                        A sequence of instructions, executed one after another, constitutes a program
+                    </li>
+                    <li>
+                        Both a program and its data are stored in the main memory
+                    </li>
+                </ul>
             </section>
 
             <section>
-                <h4>Functional Units</h4>
+                <h4>Processor Components</h4>
+                <div className="d-flex justify-content-center">
+                    <figure>
+                        <Image
+                        src="/assets/images/foc/tutorial/1B/Processor_Component.png"
+                        height={200}
+                        width={600}
+                        alt="Processor Components"
+                        className="img-fluid"/>
+                        <figcaption className="mt-3 text-center text-muted">
+                            Components of a Processor
+                        </figcaption>
+                    </figure>
+                </div>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item">
+                        Program Counter (PC)
+                        <p class="mt-3">
+                            A register holds the memory address of the
+                            current instruction being executed at the current time
+                        </p>
+                        <ul>
+                            <li>
+                                As each instruction gets fetched, the program
+                                counter increases its stored value by 1.
+                            </li>
+                            <li>
+                                After each instruction is fetched, the program
+                                counter points to the next instruction in the
+                                sequence.
+                            </li>
+                            <li>
+                                When the computer restarts or is reset, the
+                                program counter normally reverts to 0.
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        The instruction register (IR) holds the current instruction
+                    </li>
+                    <li class="list-group-item">
+                        General-purpose registers hold data and addresses
+                    </li>
+                    <li class="list-group-item">
+                        Control circuits and the arithmetic and logic unit (ALU) fetch and
+                        execute instructions
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h4>Little Man Computer</h4>
+                <div className="d-flex justify-content-center">
+                    <figure>
+                        <Image
+                        src="/assets/images/foc/tutorial/1B/LMC.png"
+                        height={200}
+                        width={600}
+                        alt="Processor Components"
+                        className="img-fluid"/>
+                        <figcaption className="mt-3 text-center text-muted">
+                            Source: <span> </span>
+                            <Link href="https://www.isnbreizh.fr/nsi/activity/lmc/lmc.html" target="_blank">
+                                https://www.isnbreizh.fr/nsi/activity/lmc/lmc.html
+                            </Link>
+                        </figcaption>
+                    </figure>
+                </div>
+                <ol class="list-group list-group-numbered list-group-flush">
+                    <li class="list-group-item">The window for typing in the code</li>
+                    <li class="list-group-item">The two buttons - to load the code into memory and then run</li>
+                    <li class="list-group-item">The window for an input, if any - not necessary</li>
+                    <li class="list-group-item">An indicator that shows the progress of the code - step by step</li>
+                    <li class="list-group-item">
+                        Memory locations where instructions and data are stored, as specified in von Neumann architecture - 100 cells, from 00 to 99.
+                    </li>
+                    <li class="list-group-item">The window for the output/s during the execution of the code</li>
+                    <li class="list-group-item">Options for controlling the flow of the execution - slow to fast, etc</li>
+                </ol>
+                <p>
+                    Note: A good video explaining little man computer more in-depth: <span> </span>
+                    <Link href="https://www.youtube.com/watch?v=qjej7QvwFpA" targe="_blank">
+                    https://www.youtube.com/watch?v=qjej7QvwFpA
+                    </Link>
+                </p>
+
             </section>
 
             <section>
                 <h4>Handling I/O Devices</h4>
+                <p>An application program can:</p>
+                <ul>
+                    <li>
+                        Read data (such as a keyboard character) from an input device
+                    </li>
+                    <li>
+                        Write data (such as letter character) to an output display screen
+                    </li>
+                    <li>
+                        Sense the readiness of an input or output (I/O) device to perform a transfer
+                    </li>
+                </ul>
             </section>
 
             <section>
                 <h4>Performance</h4>
+                <p>Determines how quickly can a program be executed</p>
+                <div className="px-3">
+                    <h5 className="text-decoration-underline">Factors</h5>
+                    <ol class="list-group list-group-numbered my-3">
+                        <li class="list-group-item">
+                            Speed of electronic circuits in the processor
+                            </li>
+                        <li class="list-group-item">
+                            Access times to the cache and main memory
+                            </li>
+                        <li class="list-group-item">
+                            Design of the instruction set
+                        </li>
+                        <li class="list-group-item">
+                            Number of operations that can be done at the same time (parallelism)
+                        </li>
+                    </ol>
+                    <h5 className="text-decoration-underline">Parellelism</h5>
+                    <p>Multicore processors (across multiple cores)</p>
+                    <Image
+                    src="/assets/images/foc/tutorial/1B/multicore.jpg"
+                    height={300}
+                    width={400}
+                    alt="Processor Components"
+                    className="img-fluid mb-3"/>
+                    <ul>
+                        <li>
+                            Multiple processing units can be fabricated on a single chip
+                        </li>
+                        <li>
+                            <b>Core</b> is used for each of these processors
+                        </li>
+                        <li>
+                            The term processor is then used for the <b>complete</b> chip
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <section>
