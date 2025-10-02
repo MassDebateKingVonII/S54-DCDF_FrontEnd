@@ -4,8 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import MobileSidebar from "@components/MobileSidebar.jsx";
-
 export default function Navbar() {
     const pathname = usePathname();
 

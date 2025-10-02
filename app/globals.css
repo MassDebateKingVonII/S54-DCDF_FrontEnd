@@ -1,6 +1,8 @@
 /* All the basic required styling */
 
+@import "./css/style.css";
 @import "./css/index/homepage.css";
+@import "./css/utils/sidebar.css";
 
 @import "./css/utils/icons.css";
 @import "./css/utils/top_navbar.css";

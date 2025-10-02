@@ -1,0 +1,40 @@
+.sidebar-offcanvas {
+    z-index: 3500;
+}
+
+/* Sidebar body should scroll if content overflows */
+.offcanvas-body {
+    max-height: calc(100vh - 56px);
+    /* leave room for header if needed */
+    overflow-y: auto;
+    overflow-x: hidden !important;
+}
+
+.scrollable-dropdown {
+    max-height: 250px;
+    /* limit height */
+    overflow-y: auto;
+    /* vertical scroll */
+    overflow-x: hidden;
+    /* prevent horizontal scroll */
+    white-space: normal;
+    /* allow wrapping */
+    word-wrap: break-word;
+    /* wrap long words */
+    overflow-wrap: break-word;
+    /* modern equivalent */
+}
+
+/* Ensure every link/item inside wraps and breaks long words */
+.sidebar-offcanvas .dropdown-menu .dropdown-item,
+.sidebar-offcanvas .dropdown-menu a,
+.sidebar-offcanvas .nav-link,
+.sidebar-offcanvas .navbar-brand {
+    display: block;
+    width: 100%;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    word-break: break-word;
+    /* fallback */
+}

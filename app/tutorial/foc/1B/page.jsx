@@ -215,19 +215,19 @@ export default function Foc_Tut1B() {
 
             <section>
                 <h4>Operations Of A Computer</h4>
-                <ol class="list-group list-group-numbered">
-                    <li class="list-group-item">
+                <ol className="list-group list-group-numbered">
+                    <li className="list-group-item">
                         Computer accepts information in the form of programs and data
                         through an input unit and stores it in the memory
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         Information stored in the memory is fetched under program control
                         into an ALU, where it is processed
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         Processed information leaves the computer through an output unit
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         All activities in the computer are directed by the Control Unit
                     </li>
                 </ol>
@@ -235,20 +235,20 @@ export default function Foc_Tut1B() {
 
             <section>
                 <h4>Instruction Cycle</h4>
-                <ol class="list-group list-group-numbered">
-                    <li class="list-group-item">
+                <ol className="list-group list-group-numbered">
+                    <li className="list-group-item">
                         Fetch an instruction and increment the program counter
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         Decode the instruction and read registers
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         Perform an ALU operation
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         Read or write memory data if the instruction involves a memory operand
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         Write the result into the destination register, if needed
                     </li>
                 </ol>
@@ -293,10 +293,10 @@ export default function Foc_Tut1B() {
                         </figcaption>
                     </figure>
                 </div>
-                <ol class="list-group list-group-numbered">
-                    <li class="list-group-item">
+                <ol className="list-group list-group-numbered">
+                    <li className="list-group-item">
                         Program Counter (PC)
-                        <p class="mt-3">
+                        <p className="mt-3">
                             A register holds the memory address of the
                             current instruction being executed at the current time
                         </p>
@@ -316,13 +316,13 @@ export default function Foc_Tut1B() {
                             </li>
                         </ul>
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         The instruction register (IR) holds the current instruction
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         General-purpose registers hold data and addresses
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         Control circuits and the arithmetic and logic unit (ALU) fetch and
                         execute instructions
                     </li>
@@ -347,16 +347,16 @@ export default function Foc_Tut1B() {
                         </figcaption>
                     </figure>
                 </div>
-                <ol class="list-group list-group-numbered list-group-flush">
-                    <li class="list-group-item">The window for typing in the code</li>
-                    <li class="list-group-item">The two buttons - to load the code into memory and then run</li>
-                    <li class="list-group-item">The window for an input, if any - not necessary</li>
-                    <li class="list-group-item">An indicator that shows the progress of the code - step by step</li>
-                    <li class="list-group-item">
+                <ol className="list-group list-group-numbered list-group-flush">
+                    <li className="list-group-item">The window for typing in the code</li>
+                    <li className="list-group-item">The two buttons - to load the code into memory and then run</li>
+                    <li className="list-group-item">The window for an input, if any - not necessary</li>
+                    <li className="list-group-item">An indicator that shows the progress of the code - step by step</li>
+                    <li className="list-group-item">
                         Memory locations where instructions and data are stored, as specified in von Neumann architecture - 100 cells, from 00 to 99.
                     </li>
-                    <li class="list-group-item">The window for the output/s during the execution of the code</li>
-                    <li class="list-group-item">Options for controlling the flow of the execution - slow to fast, etc</li>
+                    <li className="list-group-item">The window for the output/s during the execution of the code</li>
+                    <li className="list-group-item">Options for controlling the flow of the execution - slow to fast, etc</li>
                 </ol>
                 <p>
                     Note: A good video explaining little man computer more in-depth: <span> </span>
@@ -388,17 +388,17 @@ export default function Foc_Tut1B() {
                 <p>Determines how quickly can a program be executed</p>
                 <div className="px-3">
                     <h5 className="text-decoration-underline">Factors</h5>
-                    <ol class="list-group list-group-numbered my-3">
-                        <li class="list-group-item">
+                    <ol className="list-group list-group-numbered my-3">
+                        <li className="list-group-item">
                             Speed of electronic circuits in the processor
                             </li>
-                        <li class="list-group-item">
+                        <li className="list-group-item">
                             Access times to the cache and main memory
                             </li>
-                        <li class="list-group-item">
+                        <li className="list-group-item">
                             Design of the instruction set
                         </li>
-                        <li class="list-group-item">
+                        <li className="list-group-item">
                             Number of operations that can be done at the same time (parallelism)
                         </li>
                     </ol>

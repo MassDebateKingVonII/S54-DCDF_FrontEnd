@@ -3,7 +3,14 @@
 /* Mobile (xs): 3 columns */
 /* Grid for small and medium screens */
 
+/* Base navbar style */
 #mainNavbar {
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    z-index: 3000;
     background-color: #2b9a36;
 }
 

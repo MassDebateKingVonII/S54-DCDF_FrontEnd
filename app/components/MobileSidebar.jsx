@@ -7,7 +7,23 @@ export default function MobileSidebar({ data }) {
     const { title, banner, menu, offcanvasId = "mobileSidebar", tutorialPrefix = "" } = data;
 
     const [isMobile, setIsMobile] = useState(false);
+    const [showButton, setShowButton] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
+    const currentPath = usePathname();
+
+    const isActive = (href, type = "link") => {
+        if (type === "link") {
+            return href === currentPath;
+        } else if (type === "dropdown") {
+            return menu
+                .find((item) => item.type === "dropdown" && item.href === href)
+                ?.items.some((sub) => sub.href === currentPath);
+        }
+        return false;
+    };
+
+    // Detect mobile
     useEffect(() => {
         function handleResize() {
             setIsMobile(window.innerWidth < 992);
@@ -17,46 +33,57 @@ export default function MobileSidebar({ data }) {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const currentPath = usePathname();
+    // Show button only when scrolled past 50vh and scrolling up
+    useEffect(() => {
+        if (!isMobile) return;
 
-    const isActive = (href, type = "link") => {
-        if (type === "link") {
-            return href === currentPath;
-        } else if (type === "dropdown") {
-            // active if any subitem matches
-            return menu
-                .find((item) => item.type === "dropdown" && item.href === href)
-                ?.items.some((sub) => sub.href === currentPath);
-        }
-        return false;
-    };
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            const triggerY = window.innerHeight * 0.5;
+
+            if (currentScrollY > triggerY && currentScrollY < lastScrollY) {
+                setShowButton(true);
+            } else {
+                setShowButton(false);
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [lastScrollY, isMobile]);
 
     if (!isMobile) return null;
 
     return (
         <>
-        <button
-            type="button"
-            className="btn btn-primary d-lg-none ms-2 fw-bold shadow-lg mt-3"
-            style={{
-                fontSize: "1.2rem",
-                padding: "0.6rem 1rem",
-                borderRadius: "0.5rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
-            }}
-            data-bs-toggle="offcanvas"
-            data-bs-target={`#${offcanvasId}`}
-            aria-controls={offcanvasId}
-        >
-            <i className="bi bi-layout-sidebar"></i>
-            Content
-        </button>
-
+            {showButton && (
+                <button
+                    type="button"
+                    className="btn btn-primary d-lg-none ms-2 fw-bold shadow-lg mt-3"
+                    style={{
+                        fontSize: "1.2rem",
+                        padding: "0.6rem 1rem",
+                        borderRadius: "0.5rem",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                        position: "fixed",
+                        bottom: "20px", // float at bottom
+                        right: "20px",
+                        zIndex: 3200,
+                    }}
+                    data-bs-toggle="offcanvas"
+                    data-bs-target={`#${offcanvasId}`}
+                    aria-controls={offcanvasId}
+                >
+                    <i className="bi bi-layout-sidebar"></i>
+                </button>
+            )}
 
             <div
-                className="offcanvas offcanvas-start"
+                className="sidebar-offcanvas offcanvas offcanvas-start"
                 tabIndex="-1"
                 id={offcanvasId}
                 aria-labelledby={`${offcanvasId}Label`}
@@ -102,7 +129,7 @@ export default function MobileSidebar({ data }) {
                                         >
                                             {item.label}
                                         </a>
-                                        <ul className="dropdown-menu w-100" aria-labelledby={item.id}>
+                                        <ul className="dropdown-menu w-100 scrollable-dropdown" aria-labelledby={item.id}>
                                             {item.items.map((sub, si) => (
                                                 <li key={si}>
                                                     <Link
