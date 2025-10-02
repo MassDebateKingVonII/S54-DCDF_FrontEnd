@@ -12,13 +12,13 @@ import AnswersRenderer from "@components/tutorial/AnswersRenderer.jsx";
 export default function FopTut_5() {
     return(
         <div>
-            <h2 className="fw-bold">
+            <h1 className="fw-bold">
                 <i className="bi bi-mortarboard-fill"></i> Tutorial 5 - Conditional Programming
-            </h2>
+            </h1>
             <hr/>
-            <h3>
+            <h2>
                 <i className="bi bi-binoculars-fill"></i> Overview
-            </h3>
+            </h2>
             <p>
             Conditional programming is here you want to execute something only if it matches something or a set of conditions.
             This is achieved via <code>if else</code> or <code>case switch</code> statements in JavaScript.

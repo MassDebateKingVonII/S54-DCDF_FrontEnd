@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import PapersList from "@components/tutorial/PapersList.jsx";
+import PapersList from "@components/tutorial/FilesList.jsx";
 
 import AnswersRenderer from "@components/tutorial/AnswersRenderer.jsx";
 

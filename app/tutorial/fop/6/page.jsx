@@ -13,14 +13,14 @@ export default function FopTut_6() {
 
     return(
         <div>
-            <h2 className="fw-bold">
+            <h1 className="fw-bold">
                 <i className="bi bi-mortarboard-fill"></i> Tutorial 6 - Array
-            </h2>
+            </h1>
             <hr/>
 
-            <h3>
+            <h2>
                 <i className="bi bi-binoculars-fill"></i> Overview
-            </h3>
+            </h2>
             <p>An array contains elements which can be a variable or an object, 
                 which have their own position (index) inside the array. 
                 The position (index) of an array starts and counts from 0.

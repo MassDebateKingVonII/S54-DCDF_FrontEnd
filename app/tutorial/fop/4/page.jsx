@@ -12,14 +12,14 @@ import AnswersRenderer from "@components/tutorial/AnswersRenderer.jsx";
 export default function FopTut_4() {
     return (
         <div>
-            <h2 className="fw-bold">
+            <h1 className="fw-bold">
                 <i className="bi bi-mortarboard-fill"></i> Tutorial 4 - Functions
-            </h2>
+            </h1>
             <hr/>
             
-            <h3>
+            <h2>
                 <i className="bi bi-binoculars-fill"></i> Overview
-            </h3>
+            </h2>
             <p>
                 A function in programming is a reusable block of code designed to 
                 perform a specific task. Functions help organize code, 

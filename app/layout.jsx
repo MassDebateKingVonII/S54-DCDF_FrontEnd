@@ -49,9 +49,6 @@ export default function RootLayout({ children }) {
 
 				{/* JS scripts */}
 				<Script src="/assets/js/utils/prism.js" strategy="beforeInteractive" />
-				<Script src="/assets/js/general/customCodeHighlight.js" strategy="afterInteractive" />
-				{/* <Script src="/assets/js/settings/theme.js" strategy="afterInteractive" /> */}
-				{/* <Script src="/assets/js/settings/fontSize.js" strategy="afterInteractive" />*/}
 			</body>
 		</html>
 	);

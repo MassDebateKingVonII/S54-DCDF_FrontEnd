@@ -12,17 +12,14 @@ import AnswersRenderer from "@components/tutorial/AnswersRenderer.jsx";
 export default function FopTut_7() {
     return(
         <div>
-            <h4>
-                
-            </h4>
-            <h2 className="fw-bold">
+            <h1 className="fw-bold">
                 <i className="bi bi-mortarboard-fill"></i> Tutorial 7 - Object Literals And Methods
-            </h2>
+            </h1>
             <hr/>
 
-            <h3>
+            <h2>
                 <i className="bi bi-binoculars-fill"></i> Overview
-            </h3>
+            </h2>
             <p>
                 In this tutorial, you will learn about object literals,
                 which allow you to group related data and functions 

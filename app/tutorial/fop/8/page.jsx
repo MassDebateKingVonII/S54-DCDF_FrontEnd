@@ -13,13 +13,14 @@ export default function FopTut_8() {
 
     return(
         <div>
-            <h2 className="fw-bold">
+            <h1 className="fw-bold">
                 <i className="bi bi-mortarboard-fill"></i> Tutorial 8 - Array Of Objects
-            </h2>
+            </h1>
             <hr/>
-            <h3>
+
+            <h2>
                 <i className="bi bi-binoculars-fill"></i> Overview
-            </h3>
+            </h2>
             <p>
                 In this section, you will learn how to combine the usage of arrays and objects.
                 An array of objects is useful since it can group multiple objects under one collection

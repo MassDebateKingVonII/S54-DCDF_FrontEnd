@@ -1,22 +1,21 @@
 /* All the basic required styling */
-@import "./css/utils/prism.css";
+
+@import "./css/index/homepage.css";
+
 @import "./css/utils/icons.css";
 @import "./css/utils/top_navbar.css";
 @import "./css/utils/document_preview.css";
 @import "./css/utils/left_navigation.css";
 @import "./css/utils/code_preview.css";
 @import "./css/utils/widths.css";
-@import "./css/utils/letter_list.css";
-@import "./css/index/homepage.css";
+@import "./css/utils/list.css";
+@import "./css/utils/color.css";
+@import "./css/utils/prism.css";
 
 html,
 body {
 	height: 100%;
 	margin: 0;
-}
-
-.theme-card.active {
-	border: 3px solid #0d6efd;
 }
 
 .page-content {

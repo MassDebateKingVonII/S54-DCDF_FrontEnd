@@ -2,16 +2,24 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Foc_Tut1() {
+import FileList from "@components/tutorial/FilesList";
+
+// Import Data
+import files from "@data/foc/lecture_notes.js";
+const { Lect_1A } = files;
+
+export default function Foc_Tut1A() {
     return (
         <div>
-            <h2 className="fw-bold">
+            <h1 className="fw-bold">
                 <i className="bi bi-mortarboard-fill"></i> Tutorial 1A - Basic Structure of Computers
-            </h2>
+            </h1>
+            <hr/>
+
             <section>
-                <h3>
+                <h2>
                     <i className="bi bi-binoculars"></i> Overview
-                </h3>
+                </h2>
                 <p>
                     You will learn how to identify and describe the basic components of a computer,
                     including hardware such as the central processing unit (CPU), memory (RAM),
@@ -187,7 +195,7 @@ export default function Foc_Tut1() {
                 <h4>Storage Components</h4>
                 <p>The more storage a computer has, the better the performance.</p>
                 <p className="mb-0">There are two main categories of storage: </p>
-                <ul>
+                <ul className="roman-list">
                     <li className="mt-3">
                         <h5>Short-Term Storage (Volatile)</h5>
                         <p className="mb-0 text-decoration-underline">Example:</p>
@@ -235,9 +243,21 @@ export default function Foc_Tut1() {
 
             <section>
                 <h4>The Motherboard</h4>
+                <figure className="mb-3">
+                    <Image 
+                    height={300}
+                    width={700}
+                    src="/assets/images/foc/tutorial/1A/Motherboard.png"
+                    alt="The Motherboard and its components"
+                    className="img-fluid border border-secondary"
+                    />
+                    <figcaption className="text-muted text-center mt-2">
+                        The Motherboard and Its Components
+                    </figcaption>
+                </figure>
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped align-middle">
-                        <thead className="table-dark fw-bold">
+                        <thead className="fw-bold table-info">
                             <tr>
                                 <th scope="col">Component</th>
                                 <th scope="col">Description</th>
@@ -341,39 +361,72 @@ export default function Foc_Tut1() {
                     motherboard.
                 </p>
                 <p>There are three main buses:</p>
-                <ol>
-                    <li>
-                        <h5 className="text-decoration-underline">Data Bus</h5>
-                        <p className="mt-3">
-                            CPU {"<--"} Data {"-->"} RAM 
-                        </p>
-                        <p>
-                            Used to carry data signals from main memory (Ram) to CPU and vice versa or from main memory
-                            (Ram) to input/output (I/O) devices vice versa
-                        </p>
-                    </li>
 
-                    <li>
-                        <h5 className="text-decoration-underline">Address Bus</h5>
-                        <p className="mt-3">
-                            CPU {"<--"} Data {"-->"} I/O Device 
-                        </p>
-                        <p>
-                            Used to carry address signals, example a memory location or port/interface where an input or output
-                            device is attached
-                        </p>
-                    </li>
+                <div className="row g-3 mb-5">
+                    <div className="col-lg-4 col-md-6 col-12">
+                        <div className="card h-100">
+                            <div className="card-header bg-info bg-opacity-25">
+                                <h5 className="card-title">
+                                    Data Bus
+                                </h5>
+                            </div>
+                            <div className="card-body bg-secondary bg-opacity-25">
+                                <div className="card-text">
+                                    <p>
+                                        CPU {"<--"} Data {"-->"} RAM
+                                    </p>
+                                    <p className="card-text">
+                                        Used to carry data signals from main memory (RAM) to CPU and vice versa,
+                                        or from main memory (RAM) to input/output (I/O) devices and vice versa.
+                                    </p>
+                                </div>
 
-                    <li>
-                        <h5 className="text-decoration-underline">Address Bus</h5>
-                        <p className="mt-3">
-                            CPU {"<--"} Data {"-->"} Memory/Port Interface
-                        </p>
-                        <p>
-                            Used to carry control signals, example read or write, from CPU to memory or port/interface
-                        </p>
-                    </li>
-                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-lg-4 col-md-6 col-12">
+                        <div className="card h-100">
+                            <div className="card-header bg-info bg-opacity-25">
+                                <div className="card-title">
+                                    <h5 className="card-title">
+                                        Address Bus
+                                    </h5>
+                                </div>
+                            </div>
+                            <div className="card-body bg-secondary bg-opacity-25">
+                                <div className="card-text">
+                                    <p>
+                                        CPU {"<--"} Data {"-->"} I/O Device
+                                    </p>
+                                    <p className="card-text">
+                                        Used to carry address signals, e.g. a memory location or port/interface
+                                        where an input or output device is attached.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-lg-4 col-md-6 col-12">
+                        <div className="card h-100">
+                            <div className="card-header bg-info bg-opacity-25">
+                                <h5 className="card-title">Control Bus</h5>    
+                            </div>
+                            <div className="card-body bg-secondary bg-opacity-25">
+                                <div className="card-text">
+                                    <p>
+                                        CPU {"<--"} Data {"-->"} Memory/Port Interface
+                                    </p>
+                                    <p className="card-text">
+                                        Used to carry control signals, e.g. read or write,
+                                        from CPU to memory or port/interface.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <figure className="d-flex flex-column justify-content-center align-items-center">
                     <Image src="/assets/images/foc/tutorial/1A/buses.png"
@@ -418,7 +471,7 @@ export default function Foc_Tut1() {
                 <h4>HDD vs SSD</h4>
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped align-middle">
-                        <thead className="table-dark fw-bold">
+                        <thead className="table-info fw-bold">
                             <tr>
                                 <th className="w-10"></th>
                                 <th>Hard Disk Drive (HDD)</th>
@@ -487,7 +540,7 @@ export default function Foc_Tut1() {
                         </tbody>
                     </table>
 
-                    <figure class="d-flex justify-content-center align-items-center">
+                    <figure className="d-flex justify-content-center align-items-center">
                         <Image src="/assets/images/foc/tutorial/1A/inside_HDD_SSD.webp"
                             alt="RAM Stick Card"
                             width={600}
@@ -523,26 +576,27 @@ export default function Foc_Tut1() {
 
             <section>
                 <h4>Computer Boot Procedure</h4>
-                <ol>
-                    <li>
+                <ul className="list-group list-group-numbered">
+                    <li className="list-group-item">
                         Power is applied to the motherboard
                     </li>
-                    <li>
+                    <li className="list-group-item">
                         The CPU starts
                     </li>
-                    <li>
+                    <li className="list-group-item">
                         The CPU carries out the BIOS startup routines, including the POST (Power-On-Self-Test)
                     </li>
-                    <li>
-                      Boot devices, as specified in the BIOS configuration, are searched for an OS  
+                    <li className="list-group-item">
+                        Boot devices, as specified in the BIOS configuration, are searched for an OS
                     </li>
-                    <li>
+                    <li className="list-group-item">
                         The OS is loaded into RAM
                     </li>
-                    <li>
+                    <li className="list-group-item">
                         OS services are started
                     </li>
-                </ol>
+                </ul>
+
             </section>
 
             <section>
@@ -570,6 +624,14 @@ export default function Foc_Tut1() {
                     <li>Wireless NICs connect to network using service set identifier (SSID)</li>
                     <li>SSID is the network name (e.g. SP Wifi Network)</li>
                 </ul>
+            </section>
+
+            <section>
+                <h2>
+                    <i className="bi bi-journal me-2"></i>Lecture Notes
+                </h2>
+                <p>These are the official notes from the institute itself. It may be outdated.</p>
+                <FileList files={Lect_1A}/>
             </section>
         </div>
     );

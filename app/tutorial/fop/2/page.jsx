@@ -12,14 +12,14 @@ import tut2_answers from "@data/fop/tut2_answers.js";
 export default function FopTut_2() {
     return(
         <div>
-            <h2 className="fw-bold">
+            <h1 className="fw-bold">
                 <i className="bi bi-mortarboard-fill"></i> Tutorial 2 - Operators
-            </h2>
+            </h1>
             <hr/>
 
-            <h3>
+            <h2>
                 <i className="bi bi-binoculars-fill"></i> Overview
-            </h3>
+            </h2>
             <p>Operators in programming are symbols that perform operations 
                 on values (also called operands). 
                 They are used to calculate, compare, or combine data.
@@ -32,7 +32,7 @@ export default function FopTut_2() {
                 <h6>Arithmetic Operators</h6>
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped text-center align-middle">
-                        <thead className="table-dark">
+                        <thead className="table-info">
                             <tr>
                                 <th className="w-10">Operator</th>
                                 <th className="w-10">Description</th>
@@ -164,7 +164,7 @@ export default function FopTut_2() {
                 <h6 className="mt-2">Assignment Operators</h6>
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped table-hover align-middle">
-                        <thead className="table-dark">
+                        <thead className="table-info">
                             <tr>
                                 <th className="w-20">Operator</th>
                                 <th className="w-40">Example</th>
@@ -219,7 +219,7 @@ export default function FopTut_2() {
                 <h6 className="mt-2">Comparison Operators</h6>
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped table-hover align-middle">
-                        <thead className="table-dark">
+                        <thead className="table-info">
                             <tr>
                                 <th className="w-20">Operator</th>
                                 <th className="w-40">Description</th>
@@ -279,7 +279,7 @@ export default function FopTut_2() {
                 <h6 className="mt-2">Logical Operators</h6>
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped table-hover align-middle">
-                        <thead className="table-dark">
+                        <thead className="table-info">
                             <tr>
                                 <th className="w-20">Operator</th>
                                 <th className="w-80">Description</th>
@@ -314,7 +314,7 @@ export default function FopTut_2() {
 
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped table-hover align-middle">
-                        <thead className="table-dark">
+                        <thead className="table-info">
                             <tr>
                                 <th>Val</th>
                                 <th>Operator</th>

@@ -12,14 +12,14 @@ import tut1_answers from "@data/fop/tut1_answers.js";
 export default function FopTut_1() {
     return (
         <div>
-            <h2 className="fw-bold">
+            <h1 className="fw-bold">
                 <i className="bi bi-mortarboard-fill"></i> Tutorial 1 - Data Types
-            </h2>
-            <hr />
+            </h1>
+            <hr/>
 
-            <h3>
+            <h2>
                 <i className="bi bi-binoculars-fill"></i> Overview
-            </h3>
+            </h2>
             <p>
                 This tutorial introduces the fundamental data types in
                 programming. You will learn about numbers, strings,
@@ -81,7 +81,7 @@ export default function FopTut_1() {
                 <h4 className="mb-2">Table of Data Types:</h4>
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped text-center align-middle">
-                        <thead className="table-dark">
+                        <thead className="table-info">
                             <tr>
                                 <th scope="col">Type</th>
                                 <th scope="col">Description</th>

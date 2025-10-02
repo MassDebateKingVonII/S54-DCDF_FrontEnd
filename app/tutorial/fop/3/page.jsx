@@ -12,14 +12,14 @@ import AnswersRenderer from "@components/tutorial/AnswersRenderer.jsx";
 export default function FopTut_3() {
     return (
         <div>
-            <h2 className="fw-bold">
+            <h1 className="fw-bold">
                 <i className="bi bi-mortarboard-fill"></i> Tutorial 3 - Looping
-            </h2>
+            </h1>
             <hr/>
 
-            <h3>
+            <h2>
                 <i className="bi bi-binoculars-fill"></i> Overview
-            </h3>
+            </h2>
             <p>Loops can execute a block of code a number of times.
                 Loops are useful to run cover over and over again. It is often paired with
                 indexing arrays.
@@ -235,7 +235,7 @@ export default function FopTut_3() {
                                             <h4>Q1)</h4>
                                             <div className="table-responsive">
                                                 <table className="table table-bordered table-striped table-hover align-middle">
-                                                    <thead className="table-dark">
+                                                    <thead className="table-info">
                                                         <tr>
                                                             <th>(a)</th>
                                                         </tr>
@@ -279,7 +279,7 @@ export default function FopTut_3() {
 
                                             <div className="table-responsive">
                                                 <table className="table table-bordered table-striped table-hover align-middle">
-                                                    <thead className="table-dark">
+                                                    <thead className="table-info">
                                                         <tr>
                                                             <th>(b)</th>
                                                         </tr>
@@ -315,7 +315,7 @@ export default function FopTut_3() {
 
                                             <div className="table-responsive">
                                                 <table className="table table-bordered table-striped table-hover align-middle">
-                                                    <thead className="table-dark">
+                                                    <thead className="table-info">
                                                         <tr>
                                                             <th>(c)</th>
                                                         </tr>

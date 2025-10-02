@@ -6,6 +6,8 @@ import MobileSidebar from "@components/MobileSidebar.jsx";
 import FOC_sidebar from "@data/foc/sidebar.json";
 import FOC_sidebar_Mobile from "@data/foc/sidebar_Mobile.json";
 
+// CSS
+
 export default function FopTutLayout({ children }) {
     return (
         <>

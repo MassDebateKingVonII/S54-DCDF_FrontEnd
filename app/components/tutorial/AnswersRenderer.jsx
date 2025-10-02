@@ -29,7 +29,7 @@ export default function AnswersRenderer({ answers }) {
                     {q.type === "table" && (
                         <div className="table-responsive">
                             <table className="table table-bordered table-striped table-hover align-middle">
-                                <thead className="table-dark">
+                                <thead className="table-info">
                                     <tr>
                                         {q.headers.map((h, i) => (
                                             <th key={i} className={q.colWidths?.[i] || ""}>
@@ -99,7 +99,7 @@ export default function AnswersRenderer({ answers }) {
                                             <tr>
                                                 <td>
                                                     <h6>Output:</h6>
-                                                    <pre>{row.output}</pre>
+                                                    <CodeBlock language="bash" code={row.output} />
                                                 </td>
                                             </tr>
                                         </tbody>

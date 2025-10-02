@@ -70,6 +70,10 @@ export default function Sidebar({ data }) {
                                     <ul
                                         className="dropdown-menu w-100"
                                         aria-labelledby={item.id}
+                                        style={{
+                                            maxHeight: "250px",   // adjust the height limit
+                                            overflowY: "auto"     // make it scrollable
+                                        }}
                                     >
                                         {item.items.map((sub) => (
                                             <li key={sub.href}>
@@ -82,6 +86,7 @@ export default function Sidebar({ data }) {
                                             </li>
                                         ))}
                                     </ul>
+
                                 </div>
                             );
                         }

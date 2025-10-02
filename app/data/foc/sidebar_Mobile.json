@@ -22,7 +22,7 @@
                 { "label": "8 - Network Application Configuration", "href": "/tutorial/foc/8" },
                 { "label": "9A - Users and Groups User and Group Administration Process", "href": "/tutorial/foc/9A" },
                 { "label": "9B - HTTP", "href": "/tutorial/foc/9B" },
-                { "label": "10 - Introduction to Cloud Computing", "href": "/tutorial/foc/9B" }
+                { "label": "10 - Introduction to Cloud Computing", "href": "/tutorial/foc/10" }
             ]
         },
         { "type": "link", "label": "Mock Papers", "href": "/tutorial/foc/papers" },

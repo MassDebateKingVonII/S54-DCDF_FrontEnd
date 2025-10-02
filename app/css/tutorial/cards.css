@@ -1,0 +1,10 @@
+.card-list .card-header {
+	background-color: #2b9a36;
+	color: var(--bs-white);
+}
+
+
+.card-list .card-body {
+	background-color: var(--bs-secondary-bg);
+	color: var(--bs-body-color);
+}
