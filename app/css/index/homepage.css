@@ -1,4 +1,5 @@
 #bg-homepage {
+    margin-top: -105px; /* pulls background under navbar */
     background: linear-gradient(rgba(0, 0, 0, 0.729), rgba(0, 0, 0, 0.767)),
         url('/assets/images/index/bg.jpg');
     background-size: cover;

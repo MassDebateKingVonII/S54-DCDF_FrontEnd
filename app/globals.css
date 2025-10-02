@@ -1,6 +1,5 @@
 /* All the basic required styling */
 
-@import "./css/style.css";
 @import "./css/index/homepage.css";
 @import "./css/utils/sidebar.css";
 
@@ -23,6 +22,7 @@ body {
 .page-content {
 	flex: 1 0 auto;
 	/* grow and shrink as needed */
+    margin-top: 100px;
 }
 
 section {
