@@ -1,4 +1,7 @@
 // app/layout.jsx
+// Analytics
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import Script from "next/script";
 
@@ -38,6 +41,8 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body>
+				<Analytics/>
+				<SpeedInsights/>
 				<BootstrapLoader>
 					<ThemeProvider>
 						<Navbar />
