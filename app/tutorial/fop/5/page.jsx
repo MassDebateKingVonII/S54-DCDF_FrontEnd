@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import CodeBlock from "@components/CodeBlock.jsx";
+import CodeBlock from "@components/utils/CodeBlock.jsx";
 
 import AnswersRenderer from "@components/tutorial/AnswersRenderer.jsx";
 

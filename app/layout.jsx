@@ -11,10 +11,12 @@ import BootstrapLoader from "@components/BootstrapLoader.jsx";
 import Navbar from "@components/Navbar.jsx";
 import Footer from "@components/Footer.jsx";
 
+import FontSizeWrapper from "@components/appearance/FontSizeWrapper.jsx";
+
 import './globals.css';
 
 // Import Theme
-import { ThemeProvider } from "@components/ThemeProvider.jsx";
+import { ThemeProvider } from "@components/appearance/ThemeProvider.jsx";
 
 export const metadata = {
 	title: 'S54 - DCDF',
@@ -31,7 +33,6 @@ export const viewport = {
   initialScale: 1,
 };
 
-
 export default function RootLayout({ children }) {
 	
 	return (
@@ -40,15 +41,19 @@ export default function RootLayout({ children }) {
 				<BootstrapLoader>
 					<ThemeProvider>
 						<Navbar />
-						<main className="page-content">
-							{children}
-						</main>
+							<FontSizeWrapper>
+								<main className="page-content">
+									{children}
+								</main>
+							</FontSizeWrapper>
 						<Footer />
 					</ThemeProvider>
 				</BootstrapLoader>
 
 				{/* JS scripts */}
 				<Script src="/assets/js/utils/prism.js" strategy="beforeInteractive" />
+
+				<Script src="/assets/js/utils/collapseButton.js" strategy="afterInteractive" />
 			</body>
 		</html>
 	);

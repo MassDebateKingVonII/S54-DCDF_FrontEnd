@@ -1,3 +1,6 @@
+// Analytics
+import { Analytics } from "@vercel/analytics/next";
+
 import Head from "next/head";
 import Sidebar from "@components/Sidebar.jsx";
 import MobileSidebar from "@components/MobileSidebar.jsx";

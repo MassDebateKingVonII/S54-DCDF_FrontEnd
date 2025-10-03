@@ -1,6 +1,6 @@
 "use client";
 
-import CodeBlock from "@components/CodeBlock.jsx";
+import CodeBlock from "@components/utils/CodeBlock.jsx";
 
 export default function AnswersRenderer({ answers }) {
     if (!answers || !answers.length) return null;

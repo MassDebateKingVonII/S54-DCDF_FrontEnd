@@ -3,10 +3,12 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import { useTheme } from "@components/ThemeProvider.jsx";
+import { useTheme } from "@components/appearance/ThemeProvider.jsx";
+import { useFontSize } from "@components/appearance/FontSize.jsx";
 
 export default function Settings_Appearance() {
     const { theme, setTheme } = useTheme();
+    const [fontSize, setFontSize] = useFontSize();
 
     const cards = [
         { key: "system", label: "System Default", img: "/assets/images/settings/default_theme.webp" },
@@ -60,14 +62,18 @@ export default function Settings_Appearance() {
                 <label htmlFor="fontSizeSelect" className="form-label fw-bold">
                     Font Size
                 </label>
-                <select className="form-select w-auto" id="fontSizeSelect">
-                    <option value="80">80%</option>
+                <select className="form-select w-auto" 
+                value={fontSize}
+                id="fontSizeSelect" 
+                defaultValue={100}
+                onChange={(e) => setFontSize(e.target.value)}>
                     <option value="90">90%</option>
-                    <option value="100" defaultValue>
+                    <option value="95">95%</option>
+                    <option value="100">
                         100% (Default)
                     </option>
+                    <option value="105">105%</option>
                     <option value="110">110%</option>
-                    <option value="125">125%</option>
                 </select>
             </div>
         </div>
