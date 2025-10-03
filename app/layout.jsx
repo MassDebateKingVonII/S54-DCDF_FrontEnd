@@ -41,14 +41,14 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body>
-				<Analytics/>
-				<SpeedInsights/>
 				<BootstrapLoader>
 					<ThemeProvider>
 						<Navbar />
 							<FontSizeWrapper>
 								<main className="page-content">
 									{children}
+									<Analytics/>
+									<SpeedInsights/>
 								</main>
 							</FontSizeWrapper>
 						<Footer />
