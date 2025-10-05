@@ -25,42 +25,34 @@ const Lect_4 = [
 
 const Lect_5 = [
     { name: "Tut_5.pdf", path: "/assets/documents/foc/tut_5/Tut_5.pdf" },
-    { name: "Tut_5_Summary.pdf", path: "/assets/documents/foc/tut_5/Tut_5_Summary.pdf" },
 ];
 
 const Lect_6A = [
     { name: "Tut_6A.pdf", path: "/assets/documents/foc/tut_6A/Tut_6A.pdf" },
-    { name: "Tut_6A_Summary.pdf", path: "/assets/documents/foc/tut_6A/Tut_6A_Summary.pdf" },
 ];
 
 const Lect_6B = [
     { name: "Tut_6B.pdf", path: "/assets/documents/foc/tut_6B/Tut_6B.pdf" },
-    { name: "Tut_6B_Summary.pdf", path: "/assets/documents/foc/tut_6B/Tut_6B_Summary.pdf" },
 ];
 
 const Lect_7 = [
     { name: "Tut_7.pdf", path: "/assets/documents/foc/tut_7/Tut_7.pdf" },
-    { name: "Tut_7_Summary.pdf", path: "/assets/documents/foc/tut_7/Tut_7_Summary.pdf" },
 ];
 
 const Lect_8 = [
     { name: "Tut_8.pdf", path: "/assets/documents/foc/tut_8/Tut_8.pdf" },
-    { name: "Tut_8_Summary.pdf", path: "/assets/documents/foc/tut_8/Tut_8_Summary.pdf" },
 ];
 
 const Lect_9A = [
     { name: "Tut_9A.pdf", path: "/assets/documents/foc/tut_9A/Tut_9A.pdf" },
-    { name: "Tut_9A_Summary.pdf", path: "/assets/documents/foc/tut_9A/Tut_9A_Summary.pdf" },
 ];
 
 const Lect_9B = [
     { name: "Tut_9B.pdf", path: "/assets/documents/foc/tut_9B/Tut_9B.pdf" },
-    { name: "Tut_9B_Summary.pdf", path: "/assets/documents/foc/tut_9B/Tut_9B_Summary.pdf" },
 ];
 
 const Lect_10 = [
     { name: "Tut_10.pdf", path: "/assets/documents/foc/tut_10/Tut_10.pdf" },
-    { name: "Tut_10_Summary.pdf", path: "/assets/documents/foc/tut_10/Tut_10_Summary.pdf" },
 ];
 
 export default { 
